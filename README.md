@@ -5,7 +5,7 @@
 ## Установка
 
 ```bash
-go get github.com/sudzekai-web-os/abstractions@v1.0.1
+go get github.com/sudzekai-web-os/abstractions@latest
 ```
 
 ## Основные интерфейсы

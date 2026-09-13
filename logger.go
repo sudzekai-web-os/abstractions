@@ -1,6 +1,6 @@
 package abstractions
 
-import "github.com/sudzekai/web-os-api/packages/types"
+import "github.com/sudzekai-web-os/types"
 
 type ILogger interface {
 	Log(level types.LogLevel, format string, args ...any)

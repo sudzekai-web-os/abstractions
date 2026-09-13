@@ -3,7 +3,7 @@ package abstractions
 import (
 	"io"
 
-	"github.com/sudzekai/web-os-api/packages/types"
+	"github.com/sudzekai-web-os/types"
 )
 
 type ILoggerFactory interface {

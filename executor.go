@@ -1,6 +1,6 @@
 package abstractions
 
-import "github.com/sudzekai/web-os-api/packages/types"
+import "github.com/sudzekai-web-os/types"
 
 type IExecutor interface {
 	Execute(command string, args ...string) types.CommandResult

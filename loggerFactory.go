@@ -10,7 +10,7 @@ type ILoggerFactory interface {
 	SetMinLevel(types.LogLevel)
 	GetMinLevel() types.LogLevel
 
-	AddWriter() io.Writer
+	AddWriter(io.Writer) ILoggerFactory
 	GetWriters() []io.Writer
 
 	SetPreCategory(string) ILoggerFactory

@@ -1,8 +1,6 @@
 package abstractions
 
 import (
-	"io"
-
 	"github.com/sudzekai-web-os/types"
 )
 
@@ -10,8 +8,8 @@ type ILoggerFactory interface {
 	SetMinLevel(types.LogLevel)
 	GetMinLevel() types.LogLevel
 
-	AddWriter(io.Writer) ILoggerFactory
-	GetWriters() []io.Writer
+	AddWriter(ILoggerWriter) ILoggerFactory
+	GetWriters() []ILoggerWriter
 
 	SetPreCategory(string) ILoggerFactory
 	GetPreCategory() string

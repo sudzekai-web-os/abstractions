@@ -18,6 +18,17 @@ type IHandlersRegistry interface {
 		roles []string,
 	) IHandlersRegistry
 
+	AddNoFilterHandler(
+		pattern string,
+		hnd func(r *http.Request) (result types.HandlerResult),
+	) IHandlersRegistry
+
+	AddProtectedNoFilterHandler(
+		pattern string,
+		hnd func(r *http.Request) (result types.HandlerResult),
+		roles []string,
+	) IHandlersRegistry
+
 	AddMiddleware(
 		pos int,
 		middleware types.Middleware,
@@ -27,9 +38,6 @@ type IHandlersRegistry interface {
 
 	SetResultFilter(filter types.ResultFilter) IHandlersRegistry
 
-	GetHandler() http.Handler
-
 	GetRoutes() []string
-
 	ClearRoutes()
 }

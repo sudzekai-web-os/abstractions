@@ -7,12 +7,19 @@ import (
 )
 
 type ILoggerFactory interface {
-	SetWriter(writer io.Writer)
-	SetMinLevel(level types.LogLevel)
-	SetMinLevelStr(level string) error
-
-	GetWriter() io.Writer
+	SetMinLevel(types.LogLevel)
 	GetMinLevel() types.LogLevel
 
-	NewLogger(category string) ILogger
+	AddWriter() io.Writer
+	GetWriters() []io.Writer
+
+	SetPreCategory(string) ILoggerFactory
+	GetPreCategory() string
+
+	SetSubCategory(string) ILoggerFactory
+	GetSubCategory() string
+
+	Copy() ILoggerFactory
+
+	NewLogger(string) ILogger
 }

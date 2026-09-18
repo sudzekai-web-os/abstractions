@@ -4,8 +4,23 @@ type IModule interface {
 	Name() string
 	Version() string
 	Description() string
-	Initialize(
-		registry IHandlersRegistry,
+	Start() error
+}
+
+type ILoggerFactoryConsumer interface {
+	AddLoggerFactory(
 		loggerFactory ILoggerFactory,
-		executor IExecutor) error
+	)
+}
+
+type IExecutorConsumer interface {
+	AddExecutor(
+		executor IExecutor,
+	)
+}
+
+type IHandlersRegistryConsumer interface {
+	AddHandlersRegistry(
+		registry IHandlersRegistry,
+	)
 }

@@ -1,13 +1,11 @@
 package abstractions
 
 type IConfiguration interface {
-	GetString(key string) string
-	GetInt(key string) int
-	GetBool(key string) bool
+	GetString(key string) *string
+	GetBool(key string) *bool
+	GetInt(key string) *int
 
-	GetSettings() map[string]any
+	GetValue(key string) any
 
-	SetGetString(fun func(key string) string)
-	SetGetBool(fun func(key string) bool)
-	SetGetInt(fun func(key string) int)
+	GetOptions() map[string]func() any
 }

@@ -20,12 +20,12 @@ type IHandlersRegistry interface {
 
 	AddNoFilterHandler(
 		pattern string,
-		hnd func(r *http.Request) (result types.HandlerResult),
+		hnd http.HandlerFunc,
 	) IHandlersRegistry
 
 	AddProtectedNoFilterHandler(
 		pattern string,
-		hnd func(r *http.Request) (result types.HandlerResult),
+		hnd http.HandlerFunc,
 		roles []string,
 	) IHandlersRegistry
 

@@ -24,3 +24,9 @@ type IHandlersRegistryConsumer interface {
 		registry IHandlersRegistry,
 	)
 }
+
+type IConfigurationConsumer interface {
+	AddConfiguration(
+		configuration IConfiguration,
+	)
+}
